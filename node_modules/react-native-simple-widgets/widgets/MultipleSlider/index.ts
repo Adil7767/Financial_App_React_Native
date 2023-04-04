@@ -1,0 +1,5 @@
+import MultiSlider from "./MultiSlider";
+
+export {
+    MultiSlider as default,
+};

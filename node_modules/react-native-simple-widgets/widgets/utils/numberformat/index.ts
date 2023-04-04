@@ -1,0 +1,20 @@
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat/NumberFormat
+const formatDecimal = (amount: number, locale = "en-US", roundStyle = "") => {
+    const formatter =  new Intl.NumberFormat(locale, {
+        style: "decimal",
+    });
+
+    if (roundStyle === "ceil") {
+        return formatter.format(Math.ceil(amount));
+    } else if (roundStyle === "floor") {
+        return formatter.format(Math.floor(amount));
+    } else if (roundStyle === "round") {
+        return formatter.format(Math.round(amount));
+    } else {
+        return formatter.format(Number(amount.toFixed(2)));
+    }
+};
+
+export {
+    formatDecimal,
+};

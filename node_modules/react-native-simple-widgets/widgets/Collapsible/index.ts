@@ -1,0 +1,7 @@
+import Collapsible from "./Collapsible";
+import Accordion from "./Accordion";
+
+export {
+    Collapsible as default,
+    Accordion,
+};

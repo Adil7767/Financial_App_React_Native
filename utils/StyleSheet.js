@@ -1,0 +1,8 @@
+const styles = StyleSheet.create({
+    
+})
+
+
+
+
+

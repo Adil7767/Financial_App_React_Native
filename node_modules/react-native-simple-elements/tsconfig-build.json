@@ -1,0 +1,39 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "react-native": ["react-native-web"]
+        },
+        "target": "es5",
+        "lib": ["dom", "dom.iterable", "esnext"],
+        "rootDir": ".",
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": false,
+        "forceConsistentCasingInFileNames": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": false,
+        "esModuleInterop": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "jsx": "preserve",
+        "allowSyntheticDefaultImports": true
+    },
+    "exclude": [
+        "node_modules",
+        ".next",
+        "out",
+        "examples",
+        "react-native-simple-elements"
+    ],
+    "include": [
+        "next-env.d.ts",
+        "declaration.d.ts",
+        "components/**/*.ts",
+        "components/**/*.tsx",
+        "components/**/*.js",
+        "components/**/*.json"
+    ]
+}

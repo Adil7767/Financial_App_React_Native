@@ -1,0 +1,5 @@
+import TabsSectionList from "./TabsSectionList";
+
+export {
+    TabsSectionList as default,
+};

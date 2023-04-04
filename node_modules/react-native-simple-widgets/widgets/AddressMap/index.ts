@@ -1,0 +1,5 @@
+import AddressMap from "./AddressMap";
+
+export {
+    AddressMap as default,
+};

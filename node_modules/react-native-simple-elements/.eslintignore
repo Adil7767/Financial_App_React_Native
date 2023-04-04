@@ -1,0 +1,14 @@
+**/node_modules/*
+**/out/*
+**/.next/*
+**/dist/*
+
+**/examples/**/*
+**/types/*
+types.d.ts
+
+dist
+/react-native-simple-elements
+tsconfig.json
+tsconfig-build.json
+tsconfig-types.json

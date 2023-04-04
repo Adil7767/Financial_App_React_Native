@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Text /> should render children 1`] = `
+<View
+  collapsable={false}
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+  testID="portal_host"
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#000000",
+          "fontFamily": "System",
+          "fontWeight": "400",
+        },
+        Object {
+          "textAlign": "left",
+        },
+        undefined,
+      ]
+    }
+  >
+    Test
+  </Text>
+</View>
+`;
