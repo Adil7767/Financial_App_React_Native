@@ -97,11 +97,13 @@ const ResetPassword = ({ navigation }) => {
                     maxLength={20}
                     minLength={4}
                 />
-                <ButtonWithLoader
-                    text="Reset Password"
-                    onPress={onResetPassword}
-                    isLoading={isLoading}
-                />
+                <View style={[styles.btn]}>
+                    <ButtonWithLoader
+                        text="Reset"
+                        onPress={onResetPassword}
+                        isLoading={isLoading}
+                    />
+                </View>
             </View>
         </ScrollView>
     );
@@ -115,6 +117,10 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
 
     },
+    btn: {
+        flex: 0,
+        alignItems: 'center'
+    }
 
 });
 

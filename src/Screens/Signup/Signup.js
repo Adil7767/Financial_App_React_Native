@@ -67,9 +67,9 @@ const Signup = ({ navigation }) => {
             }
             catch (error) {
                 console.log('signup error', error)
-                showError(error.msg)
-                let err = error.errors.non_field_errors;
-                showError(err)
+                // showError(error.msg)
+                // let err = error.errors.non_field_errors;
+                // showError(err)
                 updateState({ isLoading: false })
                 // navigation.goBack()
             }
@@ -132,11 +132,14 @@ const Signup = ({ navigation }) => {
                     maxLength={20}
                     minLength={4}
                 />
-                <ButtonWithLoader
-                    text="Signup"
-                    onPress={onSignup}
-                    isLoading={isLoading}
-                />
+                <View style={[styles.btn]}>
+
+                    <ButtonWithLoader
+                        text="Signup"
+                        onPress={onSignup}
+                        isLoading={isLoading}
+                    />
+                </View>
             </View>
         </ScrollView>
     );
@@ -150,7 +153,9 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
 
     },
-
+    btn: {
+        alignItems: 'center',
+    }
 });
 
 

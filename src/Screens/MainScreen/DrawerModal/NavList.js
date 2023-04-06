@@ -1,8 +1,22 @@
-import { StyleSheet, Text, View, TouchableOpacity, Image, Alert } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
+import { StyleSheet, Text, View, Button, Pressable, TouchableOpacity, Image, Alert, Modal } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import actions from '../../../redux/actions/index';
-const NavList = ({ navigation }) => {
+import { Linking } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { Help } from '../../../index';
+
+const NavList = () => {
+    const navigation = useNavigation()
+    const [modalVisible, setModalVisible] = useState(false);
+    const ToMail = () => {
+        const recipient = 'adilmustafa006@gmail.com';
+        const subject = '';
+        const body = '';
+
+        Linking.openURL(`mailto:${recipient}?subject=${subject}&body=${body}`);
+
+    }
     const onLogoutAlert = () => {
         Alert.alert(
             'Logout',
@@ -21,6 +35,27 @@ const NavList = ({ navigation }) => {
     }
     return (
         <View>
+
+            <Modal
+                animationType="slide"
+                transparent={true}
+                visible={modalVisible}
+                onRequestClose={() => {
+                    setModalVisible(false);
+                    navigation.navigate('MainScreen')
+                }}>
+                <View style={styles.modalView}>
+                    <Help />
+
+                    <TouchableOpacity style={styles.button} onPress={() => setModalVisible(false)}>
+                        <Text style={[styles.txt2]}>Close</Text>
+                    </TouchableOpacity>
+
+                </View>
+
+            </Modal>
+
+
             <View >
                 <View style={[styles.border]}></View>
                 <TouchableOpacity style={[styles.rw, styles.icon]}
@@ -55,7 +90,8 @@ const NavList = ({ navigation }) => {
                 </TouchableOpacity>
                 <TouchableOpacity style={[styles.rw, styles.icon]}
                     onPress={() => {
-                        navigation.navigate('ContactUs')
+                        ToMail()
+                        // navigation.navigate('ContactUs')
                     }}>
                     <Image
                         style={[styles.img]}
@@ -73,7 +109,8 @@ const NavList = ({ navigation }) => {
                 </TouchableOpacity>
                 <TouchableOpacity style={[styles.rw, styles.icon]}
                     onPress={() => {
-                        navigation.navigate('Help')
+                        setModalVisible(true)
+                        // navigation.navigate('Help')
                     }}>
                     <Image
                         style={[styles.img]}
@@ -84,15 +121,6 @@ const NavList = ({ navigation }) => {
 
                     onPress={onLogoutAlert}
                 >
-                    {/* <ButtonWithLoader
-                isLoading={isLoading}
-                text="Logout"
-                onPress={onLogoutAlert}
-            /> */}
-
-                    {/* <Image
-                        style={[styles.img]}
-                        source={require('../../../assets/help.png')} /> */}
                     <Icon name='close' size={30} style={[styles.img]} />
                     <Text style={[styles.txt]}>Log Out</Text>
                 </TouchableOpacity>
@@ -104,6 +132,16 @@ const NavList = ({ navigation }) => {
 export default NavList
 
 const styles = StyleSheet.create({
+    modalView: {
+        flex: 0,
+        margin: 40,
+        marginVertical: '60%',
+        height: '50%',
+        backgroundColor: 'white',
+
+        // backgroundColor: 'red'
+        borderWidth: 1
+    },
     icon: {
         color: "#483d8b",
         fontSize: 30,
@@ -127,6 +165,21 @@ const styles = StyleSheet.create({
         color: 'black',
         opacity: 0.1
 
+    },
+    button: {
+        flex: 1,
+        justifyContent: 'flex-end',
+        // marginBottom: 36
+    },
+    txt2: {
+        fontWeight: '600',
+        fontSize: 20,
+        flex: 0,
+        textAlign: 'center',
+        margin: 8,
+        color: '#26bc9e'
+
+        // backgroundColor: 'red'
     }
 });
 

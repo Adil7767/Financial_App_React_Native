@@ -85,7 +85,7 @@
 
 //     useEffect(() => {
 //         // Define the API endpoint URL and your access token
-//         const apiUrl = 'https://d8b3-103-153-39-9.in.ngrok.io/api/profile/';
+//         const apiUrl = 'https://1cb0-39-53-175-158.in.ngrok.io/api/profile/';
 //         const accessToken = AA;
 //         console.log(accessToken)
 //         // Send a request to the API endpoint
@@ -168,7 +168,7 @@
 
 //     useEffect(() => {
 //         // Define the API endpoint URL and your access token
-//         const apiUrl = 'https://d8b3-103-153-39-9.in.ngrok.io/api/profile/';
+//         const apiUrl = 'https://1cb0-39-53-175-158.in.ngrok.io/api/profile/';
 //         const accessToken = AA;
 //         console.log(accessToken)
 //         // Send a request to the API endpoint

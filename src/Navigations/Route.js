@@ -22,7 +22,7 @@ export default function Routes() {
     return (
         <NavigationContainer>
             <Stack.Navigator>
-                {/* {!!userData && userData?.access_token ? MainStack(Stack)
+                {/* {!!userData && userData?.access_token ? MainStack(St ack)
                     : AuthStack(Stack)
                 } */}
                 {AA != '' ? MainStack(Stack)
