@@ -28,20 +28,20 @@ import {
 
 } from '../index';
 import TabRoutes from "./TabRoutes";
-import Icon from 'react-native-vector-icons/FontAwesome';
-import { useNavigation } from '@react-navigation/native';
-import { HeaderBackButton } from '@react-navigation/stack';
+// import Icon from 'react-native-vector-icons/FontAwesome';
+// import { useNavigation } from '@react-navigation/native';
+// import { HeaderBackButton } from '@react-navigation/stack';
 
 
-function CustomHeader() {
-    const navigation = useNavigation();
+// function CustomHeader() {
+//     const navigation = useNavigation();
 
-    return (
-        <TouchableOpacity onPress={() => navigation.navigate('MainScreen')}>
-            <Text>Some Component</Text>
-        </TouchableOpacity>
-    );
-}
+//     return (
+//         <TouchableOpacity onPress={() => navigation.navigate('MainScreen')}>
+//             <Text>Some Component</Text>
+//         </TouchableOpacity>
+//     );
+// }
 export default function (Stack) {
     return (
         <>
@@ -142,7 +142,7 @@ export default function (Stack) {
             <Stack.Screen
                 name="Help"
                 component={Help}
-            // options={{ headerShown: false }}
+                options={{ headerShown: false }}
             />
             <Stack.Screen
                 name="CashTransactions"

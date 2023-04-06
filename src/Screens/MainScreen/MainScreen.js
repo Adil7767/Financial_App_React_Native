@@ -69,6 +69,8 @@ const MainScreen = ({ navigation }) => {
           </TouchableOpacity>
           <TouchableOpacity style={[styles.rw, styles.sidebyside]} onPress={() => {
             navigation.navigate('Accounts')
+
+            alert('hello')
           }}>
 
             <Icon name='bank' size={32} style={[styles.icon, { color: 'blue' }]} />

@@ -49,6 +49,7 @@ export { default as ExpencesHeader } from './Screens/Expences/ExpencesHeader';
 export { default as MyWidget } from './Screens/MainScreen/MyWidget';
 export { default as BackUpModal } from './Screens/MainScreen/BackUpModal';
 export { default as BackUpOffModal } from './Screens/MainScreen/BackUpOffModal';
+export { default as Home } from './Screens/MainScreen/Home';
 
 // export {
     // export { default as MainScreen } from './Screens/MainScreen';

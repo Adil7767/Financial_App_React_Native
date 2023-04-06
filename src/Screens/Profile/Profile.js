@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, FlatList, Button, Alert, StyleSheet } from 'react-native';
 import { useDispatch, useSelector } from "react-redux";
 import ButtonWithLoader from '../../Components/ButtonWithLoader';
-import { setdata } from '../../redux/actions/User/UserAction';
+import { setdata } from '../../redux/actions/UserAction';
 import { useNavigation } from '@react-navigation/native';
 import actions from "../../redux/actions/index";
 import { showError, showSuccess } from '../../utils/helperFunction';
@@ -14,15 +14,15 @@ const Profile = () => {
     const [userData, setUserData] = useState([]);
     const dispatch = useDispatch();
     const data = useSelector((state) => state)
-    var AA = data.user.token.token.access
-    var userdata = data.user?.userData
+    var AA = data.user.token?.token?.access
+    var userdata = data.user.userData
     var Data = data?.user?.userData
     // console.log('my data', AA)
     console.log('User Data', userData)
 
     useEffect(() => {
         // Define the API endpoint URL and your access token
-        const apiUrl = 'https://d8b3-103-153-39-9.in.ngrok.io/api/profile/';
+        const apiUrl = 'https://1cb0-39-53-175-158.in.ngrok.io/api/profile/';
         const accessToken = AA;
         // console.log(accessToken)
         // Send a request to the API endpoint
@@ -75,19 +75,27 @@ const Profile = () => {
                 renderItem={({ item }) => (
                     <View>
                         <Text style={[styles.txt]}>Name: {item.first_name} {item.last_name}</Text>
-                        <Text>Email: {item.email}</Text>
-                        <Text>Gender: {item.gender}</Text>
-                        <Text>phone_number: {item.phone_number}</Text>
+                        <Text style={[styles.txt]}>Email: {item.email}</Text>
+                        <Text style={[styles.txt]}>Gender: {item.gender}</Text>
+                        <Text style={[styles.txt]}>Phone_number: {item.phone_number}</Text>
                     </View>
                 )}
             // keyExtractor={(item) => item.id.toString()}
             />
-            <ButtonWithLoader
-                isLoading={isLoading}
-                text="Logout"
-                onPress={onLogoutAlert}
-            />
-            <Button title='Change Password' onPress={() => navigation.navigate('ChangePassword')}></Button>
+            <View style={[styles.btns]}>
+
+                <ButtonWithLoader
+                    isLoading={isLoading}
+                    text="Logout"
+                    onPress={onLogoutAlert}
+                />
+                <ButtonWithLoader
+                    isLoading={isLoading}
+                    text="Change Password"
+                    onPress={() => navigation.navigate('ChangePassword')}
+                />
+            </View>
+
 
         </View>
     );
@@ -96,6 +104,15 @@ const Profile = () => {
 export default Profile;
 const styles = StyleSheet.create({
     txt: {
-        fontsize: 20
+        fontSize: 20,
+        // textAlign: 'center',
+        // backgroundColor: 'red'
+    },
+    btns: {
+        // flex: 0,
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        alignItems: 'baseline'
+
     }
 })

@@ -13,9 +13,9 @@ export async function getHeaders() {
 		// console.log(userData.accessToken, 'header')
 		const dispatch = useDispatch();
 		const data = useSelector((state) => state)
-		var AA = data.user.token
+		var Token = data.user.token
 		return {
-			authorization: `${userData.access_token}`,
+			authorization: `${Token}`,
 		};
 	}
 	return {};
@@ -79,7 +79,7 @@ export async function apiReq(
 					}
 					return rej(error.response.data)
 				} else {
-					return rej({ message: "Network Error", msg: "Network Error" });
+					return rej({ message: "Network Error ", msg: "Network Error" });
 				}
 				return rej(error);
 			});

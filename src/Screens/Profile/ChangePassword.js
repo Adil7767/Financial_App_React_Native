@@ -117,11 +117,14 @@ const Changepassword = ({ navigation }) => {
                     maxLength={20}
                     minLength={4}
                 />
-                <ButtonWithLoader
-                    text="Change password"
-                    onPress={onChangepassword}
-                    isLoading={isLoading}
-                />
+                <View style={[styles.btn]}>
+
+                    <ButtonWithLoader
+                        text="Save"
+                        onPress={onChangepassword}
+                        isLoading={isLoading}
+                    />
+                </View>
             </View>
         </ScrollView>
     );
@@ -135,6 +138,9 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
 
     },
+    btn: {
+        alignItems: 'center'
+    }
 
 });
 

@@ -25,12 +25,13 @@ const styles = StyleSheet.create({
         backgroundColor: 'blue',
         alignItems: 'center',
         justifyContent: 'center',
-        borderRadius: 10,
+        borderRadius: 20,
         paddingHorizontal: 16,
-        marginBottom: 30
+        marginBottom: 30,
+        minWidth: '40%'
     },
     textStyle: {
-        fontSize: 16,
+        fontSize: 14,
         textTransform: 'uppercase',
         fontWeight: 'bold',
         color: 'white'

@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import { Dropdown } from '../Components/AddTransaction/DropDown';
 import { TextInput } from 'react-native-gesture-handler';
 import { useSelector, useDispatch } from "react-redux";
-import { RemoveTransaction, AddTransaction, } from "../../redux/actions/User/UserAction";
+import { RemoveTransaction, AddTransaction, } from "../../redux/actions/UserAction";
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import dayjs from "dayjs";
 var date = dayjs(Date()).format(" MMMM-DD-YYYY");

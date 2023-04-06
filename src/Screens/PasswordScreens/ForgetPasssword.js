@@ -8,9 +8,10 @@ import {
 import { useDispatch, useSelector } from 'react-redux';
 import { showSuccess2, showSuccess3, showError } from '../../utils/HelpMSGS'
 import TextInputWithLable from '../../Components/TextInputWithLabel';
-import { showError4 } from '../../utils/helperFunction';
+import { showError4, showSuccess } from '../../utils/helperFunction';
 import validator from '../../utils/validations';
 import actions from '../../redux/actions';
+import ButtonWithLoader from '../../Components/ButtonWithLoader';
 const ForgetPasssword = ({ navigation }) => {
     const [state, setState] = useState({
         isLoading: false,
@@ -45,11 +46,13 @@ const ForgetPasssword = ({ navigation }) => {
                     email
                 })
                 console.log("res==>>>>>", res)
+                showSuccess(res.msg)
                 updateState({ isLoading: false })
                 navigation.navigate('ResetPassword')
             } catch (error) {
                 console.log('reset mail error', error)
-                // showError4(error.me)
+                // let err = error.errors.non_field_errors
+                showError('Enter Valid mail or check Internet connection')
                 updateState({ isLoading: false })
             }
 
@@ -71,12 +74,20 @@ const ForgetPasssword = ({ navigation }) => {
                 keyboardType="email-address"
             />
 
+            <View style={[styles.btn]}>
 
-            <View style={styles['btnContainer']}>
+                <ButtonWithLoader
+                    text="Get OTP"
+                    onPress={() => onReset()}
+                    isLoading={isLoading}
+                />
+            </View>
+            {/* <View style={styles['btnContainer']}>
                 <TouchableOpacity style={styles['button']} onPress={() => onReset()}>
                     <Text style={styles['text']}>Get OTP</Text>
                 </TouchableOpacity>
-            </View>
+
+            </View> */}
             {/* <View style={styles['btnContainer']}>
                 <TouchableOpacity style={styles['button']} onPress={() => navigation.navigate('Reset_Password')}>
                     <Text style={styles['text']}>Reset Password(By Previos Password)</Text>
@@ -160,6 +171,9 @@ const styles = StyleSheet.create({
         // alignSelf: 'center',
         paddingVertical: 10,
         fontSize: 15,
+    },
+    btn: {
+        alignItems: 'center'
     }
 });
 

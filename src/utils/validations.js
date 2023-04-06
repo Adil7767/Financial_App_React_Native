@@ -70,7 +70,7 @@ export default function (data) {
         if (emptyValidationText !== '') {
             return emptyValidationText;
         } else {
-            let minLengthValidation = checkMinLength(previous_password, 6, 'password')
+            let minLengthValidation = checkMinLength(previous_password, 4, 'password')
             if (minLengthValidation !== '') {
                 return minLengthValidation
             }
@@ -83,7 +83,7 @@ export default function (data) {
         if (emptyValidationText !== '') {
             return emptyValidationText;
         } else {
-            let minLengthValidation = checkMinLength(password, 6, 'password')
+            let minLengthValidation = checkMinLength(password, 4, 'password')
             if (minLengthValidation !== '') {
                 return minLengthValidation
             }
@@ -94,7 +94,7 @@ export default function (data) {
         if (emptyValidationText !== '') {
             return emptyValidationText;
         } else {
-            let minLengthValidation = checkMinLength(confirm_password, 6, 'password')
+            let minLengthValidation = checkMinLength(confirm_password, 4, 'password')
             if (minLengthValidation !== '') {
                 return minLengthValidation
             }
