@@ -55,6 +55,12 @@ export default function (data) {
         }
     }
 
+
+
+
+
+
+
     if (email !== undefined) {
         let emptyValidationText = checkEmpty(email, 'Please enter your email')
         if (emptyValidationText !== '') {
@@ -100,9 +106,7 @@ export default function (data) {
             }
         }
     }
-}
-//     else {
-//         showError2()
-//     }
-// }
 
+
+
+}

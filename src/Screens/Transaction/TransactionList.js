@@ -1,197 +1,220 @@
+
+
 // import React from 'react';
 // import {
+//   View,
+//   FlatList,
 //   StyleSheet,
 //   Text,
-//   View,
-// TouchableOpacity,
-//   SectionList,
-//   StatusBar,
+
 // } from 'react-native';
-// import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+// import { ScrollView } from 'react-native-gesture-handler';
 // import { useSelector } from "react-redux";
+// import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-// const DATA = [
-//   {
-//     title: 'Latest transactions',
-//     amount:'to',
-//     data:[Math.random()*10,Math.random()*10,Math.random()*10,Math.random()*10]
-//   },
+// const Item = ({ title, amount, total, date, description }) => (
 
-// ];
-// const List=(item)=>{
-//   const data = useSelector((state) => state)
-//   var AA = data.user.DATA
-//   // var aa=data.user.transactions=data.user.transactions.push(1)
-//   console.log(AA)
-//     const aa =Date();
-//     return(
-// <View style={{flexDirection:'row'}}>
-//         <View>
-// <Icon amount='rotate-3d-variant' size={30} />
-// </View>
-// <View style={{flexDirection:'column'}}>
-//         <Text>{item}</Text>
-//         <Text>{item}</Text>
-//         <Text>{aa}</Text>
+//   <View style={styles.item}>
+//     <Icon name='rotate-3d-variant' size={40} style={[styles.icon]} />
+//     <View style={[styles.right, styles.rw]}>
+//       <View style={styles.clm}>
+//         <Text style={styles.title}>{title}</Text>
+//         {/* <Text style={styles.amount}>RS:{amount}</Text> */}
+//         <Text style={[styles.date]}>{date}</Text>
+//         <Text style={[styles.date]}>{description}</Text>
+
+//       </View>
+//       <View style={styles.clm}>
+//         <Text style={[styles.amount]} >RS:{amount}</Text>
+//         <View style={[styles.rw]}>
+//           <Icon name='bank' size={30} style={[styles.icon]} />
+//           <Text style={[styles.amount]} >{total}</Text>
 //         </View>
-//         <Text>{item}</Text>
-//           </View>
-//     )
-// }
-// // style={{margin:5}}
-// const TransactionList = () => (
-
-//     <SectionList
-//     sections={DATA}
-//     keyExtractor={(item, index) => item + index}
-//     renderItem={({item}) => (
-//         <View style={[styles.item,{margin:2}]}>
-//           <Text style={styles.title}>{List(item)}</Text>
-//         </View>
-//       )}
-
-//       renderSectionHeader={({section: {title}}) => (
-//           <Text style={styles.header}>{title}</Text>
-//           )}
-//           />
-
-
+//         {/* <Text style={styles.title}>N</Text> */}
+//       </View>
+//     </View>
+//   </View>
 // );
+// const TransactionList = () => {
+//   const data = useSelector((state) => state)
+//   // const DATA=useSelector((state) => state)
+//   var aa = data.user.DATA2
+//   // var aa=data.user.transactions=data.user.transactions.push(1)
+//   // console.log('aa', aa)
+
+//   return (
+
+
+//     <FlatList
+//       data={aa}
+//       renderItem={({ item }) => <Item title={item.title}
+//         amount={item.amount} total={item.total}
+//         date={item.date}
+//         description={item.description} />
+
+//       }
+//       keyExtractor={item => item.id}
+//     />
 
 
 
-
+//   );
+// };
 
 // const styles = StyleSheet.create({
 //   container: {
-//     flex: 0,
-//     paddingTop: StatusBar.currentHeight,
-//     marginHorizontal: 16,
+//     // marginTop: 10,
+
 //   },
 //   item: {
-//     backgroundColor: '#f9c2ff',
 //     padding: 10,
-//     marginVertical: 6,
-//   },
-//   header: {
-//     fontSize: 32,
-//     backgroundColor: '#fff',
+//     // marginVertical: 8,
+//     marginHorizontal: 10,
+//     flexDirection: 'row',
+//     backgroundColor: "white",
+//     alignItems: 'center',
+
+
 //   },
 //   title: {
-//     fontSize: 24,
+//     maxWidth: "100%",
+//     // fontSize: 20,
+//     color: 'black'
 //   },
+//   amount: {
+//     fontSize: 20,
+//     textAlign: 'right',
+//     color: 'black'
+//   },
+
+//   icon: {
+//     flex: 0,
+//     paddingRight: 5,
+//     color: 'green',
+//   },
+//   right: {
+//     flex: 1,
+//     justifyContent: "space-between",
+
+//   },
+//   date: {
+//     textAlignVertical: 'bottom',
+//     color: 'black'
+//   },
+//   clm: {
+//     flexDirection: 'column'
+//   },
+//   rw: {
+//     flexDirection: 'row',
+//   }
+
 // });
 
 // export default TransactionList;
 
-import React from 'react';
-import {
-  View,
-  FlatList,
-  StyleSheet,
-  Text,
 
-} from 'react-native';
+
+
+
+
+
+import React, { useEffect, useState } from 'react';
+import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
+import ButtonWithLoader from '../../Components/ButtonWithLoader';
+import TextInputWithLable from '../../Components/TextInputWithLabel';
+
+import validator from '../../utils/validations';
+import { showError, showSuccess } from '../../utils/helperFunction';
+import actions from '../../redux/actions';
+import { showMessage } from 'react-native-flash-message';
 import { ScrollView } from 'react-native-gesture-handler';
-import { useSelector } from "react-redux";
-import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const Item = ({ title, amount, total, date, description }) => (
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigation } from '@react-navigation/native';
 
-  <View style={styles.item}>
-    <Icon name='rotate-3d-variant' size={40} style={[styles.icon]} />
-    <View style={[styles.right, styles.rw]}>
-      <View style={styles.clm}>
-        <Text style={styles.title}>{title}</Text>
-        {/* <Text style={styles.amount}>RS:{amount}</Text> */}
-        <Text style={[styles.date]}>{date}</Text>
-        <Text style={[styles.date]}>{description}</Text>
 
-      </View>
-      <View style={styles.clm}>
-        <Text style={[styles.amount]} >RS:{amount}</Text>
-        <View style={[styles.rw]}>
-          <Icon name='bank' size={30} style={[styles.icon]} />
-          <Text style={[styles.amount]} >{total}</Text>
-        </View>
-        {/* <Text style={styles.title}>N</Text> */}
-      </View>
-    </View>
-  </View>
-);
-const TransactionList = () => {
-  const data = useSelector((state) => state)
-  // const DATA=useSelector((state) => state)
-  var aa = data.user.DATA2
-  // var aa=data.user.transactions=data.user.transactions.push(1)
-  // console.log('aa', aa)
+const Transactionlist = () => {
+
+  const [result, setresult] = useState()
+  const navigation = useNavigation();
+  const dispatch = useDispatch();
+  const txt = useSelector((state) => state)
+  var token = txt?.user?.token
+  const accessToken = token?.token?.access;
+  const DATA = useSelector((state) => state.user);
+  const Data = DATA.userData;
+
+
+  useEffect(() => {
+    onTransactionlist()
+  }, []);
+
+  const onTransactionlist = async () => {
+
+    try {
+      const res = await actions.transaction({
+        amount: 200,
+        category: 1,
+        description: 'by hand',
+        frequency: 'daily',
+        payment_method: 1,
+        type: 1,
+
+      },
+
+
+
+
+
+
+      )
+
+      console.log("res of Transactionlist==>>>>>", res)
+      // showMessage("password Change successfully...!!!! Please ReLogin")
+
+      // showSuccess(res)
+      // navigation.navigate('MainScreen')
+    }
+    catch (error) {
+      console.log('Transactionlist error', error)
+      // let err = error.errors.trans_type;
+      // showError(err)
+
+
+      // navigation.goBack()
+    }
+
+  }
+
+
 
   return (
 
-
-    <FlatList
-      data={aa}
-      renderItem={({ item }) => <Item title={item.title}
-        amount={item.amount} total={item.total}
-        date={item.date}
-        description={item.description} />
-
-      }
-      keyExtractor={item => item.id}
-    />
-
-
+    <View >
+      {/* <Text style={[styles.txt]}>{result}</Text> */}
+    </View>
 
   );
 };
 
+
 const styles = StyleSheet.create({
   container: {
-    // marginTop: 10,
-
-  },
-  item: {
-    padding: 10,
-    // marginVertical: 8,
-    marginHorizontal: 10,
-    flexDirection: 'row',
-    backgroundColor: "white",
-    alignItems: 'center',
-
-
-  },
-  title: {
-    maxWidth: "100%",
-    // fontSize: 20,
-    color: 'black'
-  },
-  amount: {
-    fontSize: 20,
-    textAlign: 'right',
-    color: 'black'
-  },
-
-  icon: {
-    flex: 0,
-    paddingRight: 5,
-    color: 'green',
-  },
-  right: {
     flex: 1,
-    justifyContent: "space-between",
+    padding: 24,
+    backgroundColor: 'white',
 
   },
-  date: {
-    textAlignVertical: 'bottom',
-    color: 'black'
+  btn: {
+    alignItems: 'center'
   },
-  clm: {
-    flexDirection: 'column'
-  },
-  rw: {
-    flexDirection: 'row',
+  txt: {
+    fontSize: 15,
+    textAlign: 'center',
+    backgroundColor: 'aqua'
   }
 
 });
 
-export default TransactionList;
+
+export default Transactionlist;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { BottomTabBar, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Home, Profile } from '../index';
+import { Home, Profile, AllTransactions, Income, Others } from '../index';
 
 const BottomTab = createBottomTabNavigator();
 
@@ -15,9 +15,9 @@ const TabRoutes = () => {
             initialRouteName="Home"
         >
             <BottomTab.Screen name="Home" component={Home} />
-            <BottomTab.Screen name="Profile" component={Profile}
+            <BottomTab.Screen name="Income" component={Income} />
+            <BottomTab.Screen name="Others" component={Others} />
 
-            />
         </BottomTab.Navigator>
 
     )
