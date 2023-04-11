@@ -7,8 +7,8 @@ const initialState = {
             first_name: 'Adil',
             last_name: 'Mustafa',
             email: 'adilmustafa006@gmai.com',
-            phone_number: '12346789000',
-            gendar: 'M'
+            phone_number: '03047767750',
+            gender: 'Male'
             //         first_name: '',
             //         last_name: '',
             //         email: '',
