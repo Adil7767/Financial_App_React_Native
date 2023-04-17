@@ -22,7 +22,7 @@ const Profile = () => {
     console.log('user', userData)
     useEffect(() => {
         // Define the API endpoint URL and your access token
-        const apiUrl = 'https://417a-39-53-182-100.ngrok-free.app/api/profile/';
+        const apiUrl = 'https://953f-103-153-39-9.ngrok-free.app/api/profile/';
         const accessToken = AA;
         console.log('token', accessToken)
         // Send a request to the API endpoint
@@ -35,16 +35,22 @@ const Profile = () => {
         })
             .then(response => response.json())
             .then(data => setUserData([data])) // store data in an array
-            .catch = (error) => {
-                let err = error.errors.non_field_errors;
-                // if (error) {
-                showError(err)
-                // ||
-                showError(error.msg)
-                // }
-                // ,
-                // console.log('erors', error)
-            };
+            // .catch = (error) => {
+            //     let err = error.errors.non_field_errors;
+            //     // if (error) {
+            //     showError(err)
+            //     // ||
+            //     showError(error.msg)
+            //     // }
+            //     // ,
+            //     // console.log('erors', error)
+            // };
+            .catch(function handleError(error) {
+                console.log(error);
+                // let err = error.errors.non_field_errors;
+                // showError(err);
+                showError(error.msg);
+            });
     }, []);
 
     const logout = () => {

@@ -26,6 +26,13 @@ export function payment(data) {
 export function transaction(data, headers) {
     return apiPost(TRANSACTION, data, headers,)
 }
+export async function transactionadd(data, headers) {
+    return await apiPost(TRANSACTION, data, headers,)
+}
+
+export async function transactionget(data, headers) {
+    return await apiGet(TRANSACTION, data, headers,)
+}
 export async function total_transaction(data, headers) {
     return apiPost(TOTAL_TRANSACTION, data, headers,)
 }

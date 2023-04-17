@@ -15,6 +15,7 @@ MERGED from [:react-native-community_slider] /home/workspace/Android/Projects/fi
 MERGED from [:react-native-biometrics] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-biometrics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-12:12
 MERGED from [:react-native-fs] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-fs/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-11:12
 MERGED from [:react-native-gesture-handler] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-image-picker] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-21:12
 MERGED from [:react-native-safe-area-context] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-screens] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-shared-group-preferences] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-shared-group-preferences/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
@@ -51,6 +52,7 @@ MERGED from [com.facebook.fresco:ui-common:2.6.0] /home/workspace/.gradle/caches
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/workspace/.gradle/caches/transforms-3/c66a0e494ae03615f4f2412eca3a7dd2/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] /home/workspace/.gradle/caches/transforms-3/859aeea425ecb1c9af8d15503a5ef58a/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.core:core-ktx:1.6.0] /home/workspace/.gradle/caches/transforms-3/9644fb1c4cab9aa0d403c9f34e6ea78e/transformed/jetified-core-ktx-1.6.0/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.exifinterface:exifinterface:1.3.3] /home/workspace/.gradle/caches/transforms-3/dabeb127ebcf68c206ca5581e62d75f6/transformed/exifinterface-1.3.3/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/workspace/.gradle/caches/transforms-3/499913aa779d5677f84de1b3821854aa/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.sqlite:sqlite:2.1.0] /home/workspace/.gradle/caches/transforms-3/6c2e0b04a335666cd4b78cb912868b2a/transformed/sqlite-2.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/workspace/.gradle/caches/transforms-3/237960ca1607edccd2d98c15f52b2dce/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
@@ -102,15 +104,27 @@ INJECTED from /home/workspace/Android/Projects/financial-app-react/android/app/s
 	xmlns:android
 		ADDED from /home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:1:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:4:5-67
+ADDED from /home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:3:5-67
 MERGED from [com.facebook.flipper:flipper:0.125.0] /home/workspace/.gradle/caches/transforms-3/03f04a3f11198ce3b7c6cedb9b41266b/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:15:5-67
 MERGED from [com.facebook.flipper:flipper:0.125.0] /home/workspace/.gradle/caches/transforms-3/03f04a3f11198ce3b7c6cedb9b41266b/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:15:5-67
 	android:name
-		ADDED from /home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:4:22-64
+		ADDED from /home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:3:22-64
+uses-permission#android.permission.CAMERA
+ADDED from /home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:4:1-60
+	android:name
+		ADDED from /home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:4:18-58
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from /home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:5:1-76
+MERGED from [:react-native-fs] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-fs/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-81
+MERGED from [:react-native-fs] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-fs/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-81
+	android:name
+		ADDED from /home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:5:18-74
 application
 ADDED from /home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:6:5-26:19
 MERGED from /home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:6:5-26:19
 MERGED from /home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:6:5-26:19
+MERGED from [:react-native-image-picker] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-19:19
+MERGED from [:react-native-image-picker] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-19:19
 MERGED from [com.facebook.react:react-native:0.70.0] /home/workspace/.gradle/caches/transforms-3/df0743fddd24fb4ce9da9c85e374cb8b/transformed/jetified-react-native-0.70.0-debug/AndroidManifest.xml:9:5-20
 MERGED from [com.facebook.react:react-native:0.70.0] /home/workspace/.gradle/caches/transforms-3/df0743fddd24fb4ce9da9c85e374cb8b/transformed/jetified-react-native-0.70.0-debug/AndroidManifest.xml:9:5-20
 MERGED from [com.facebook.soloader:soloader:0.10.4] /home/workspace/.gradle/caches/transforms-3/87826452408345e9fcde9828ee0fb34c/transformed/jetified-soloader-0.10.4/AndroidManifest.xml:11:5-20
@@ -203,6 +217,8 @@ MERGED from [:react-native-fs] /home/workspace/Android/Projects/financial-app-re
 MERGED from [:react-native-fs] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-fs/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-gesture-handler] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-gesture-handler] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-image-picker] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-image-picker] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-safe-area-context] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-safe-area-context] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-safe-area-context/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-screens] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-screens/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
@@ -275,6 +291,8 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] /home/workspace/.gradle/c
 MERGED from [androidx.interpolator:interpolator:1.0.0] /home/workspace/.gradle/caches/transforms-3/859aeea425ecb1c9af8d15503a5ef58a/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core-ktx:1.6.0] /home/workspace/.gradle/caches/transforms-3/9644fb1c4cab9aa0d403c9f34e6ea78e/transformed/jetified-core-ktx-1.6.0/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.core:core-ktx:1.6.0] /home/workspace/.gradle/caches/transforms-3/9644fb1c4cab9aa0d403c9f34e6ea78e/transformed/jetified-core-ktx-1.6.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.3] /home/workspace/.gradle/caches/transforms-3/dabeb127ebcf68c206ca5581e62d75f6/transformed/exifinterface-1.3.3/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.exifinterface:exifinterface:1.3.3] /home/workspace/.gradle/caches/transforms-3/dabeb127ebcf68c206ca5581e62d75f6/transformed/exifinterface-1.3.3/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/workspace/.gradle/caches/transforms-3/499913aa779d5677f84de1b3821854aa/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/workspace/.gradle/caches/transforms-3/499913aa779d5677f84de1b3821854aa/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.sqlite:sqlite:2.1.0] /home/workspace/.gradle/caches/transforms-3/6c2e0b04a335666cd4b78cb912868b2a/transformed/sqlite-2.1.0/AndroidManifest.xml:20:5-22:41
@@ -369,10 +387,22 @@ MERGED from [androidx.biometric:biometric:1.1.0] /home/workspace/.gradle/caches/
 MERGED from [androidx.biometric:biometric:1.1.0] /home/workspace/.gradle/caches/transforms-3/3ec7d35bd26d6a046f0e32cbca580ff3/transformed/biometric-1.1.0/AndroidManifest.xml:27:5-74
 	android:name
 		ADDED from [:react-native-biometrics] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-biometrics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-71
-uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from [:react-native-fs] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-fs/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-81
+provider#com.imagepicker.ImagePickerProvider
+ADDED from [:react-native-image-picker] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
+	android:grantUriPermissions
+		ADDED from [:react-native-image-picker] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
+	android:authorities
+		ADDED from [:react-native-image-picker] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-71
+	android:exported
+		ADDED from [:react-native-image-picker] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
 	android:name
-		ADDED from [:react-native-fs] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-fs/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-78
+		ADDED from [:react-native-image-picker] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-63
+meta-data#android.support.FILE_PROVIDER_PATHS
+ADDED from [:react-native-image-picker] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-17:70
+	android:resource
+		ADDED from [:react-native-image-picker] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:17-67
+	android:name
+		ADDED from [:react-native-image-picker] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:17-67
 provider#androidx.startup.InitializationProvider
 ADDED from [androidx.emoji2:emoji2:1.0.0] /home/workspace/.gradle/caches/transforms-3/b6fe4da57007a43d86a66ba4c66459bd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
 MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] /home/workspace/.gradle/caches/transforms-3/bc74a39e1ea23fea00bfcf2682a93948/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:26:9-34:20

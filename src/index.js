@@ -26,6 +26,8 @@ export { default as Income } from './Screens/Transaction/Income';
 export { default as Others } from './Screens/Transaction/Others';
 export { default as Expence } from './Screens/Transaction/Expence';
 export { default as TotalOfTransactions } from './Screens/Transaction/TotalOfTrnsactions';
+export { default as ImagePicker1 } from './Screens/Transaction/ImagePicker1';
+export { default as ShowHide } from './Screens/Transaction/ShowHide';
 
 export { default as AllTransactionHeader } from './Screens/Transaction/AllTransactionHeader';
 export { default as SearchBoxModal } from './Screens/MainScreen/SearchBoxModal';

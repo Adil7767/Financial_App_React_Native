@@ -18,11 +18,15 @@ export const saveUserData = (data) => {
 
     )
 }
+// export function login(data) {
+//     return apiPost(LOGIN, data)
+
+// }
 
 export function login(data) {
     return new Promise((resolve, reject) => {
         return apiPost(LOGIN, data).then((res) => {
-            // if (res.data.emailVerified) {
+            // if (res.data.) {emailVerified
             if (res.data) {
                 setUserData(res.data).then(() => {
                     resolve(res)
@@ -42,6 +46,7 @@ export function signup(data) {
     return apiPost(SIGNUP, data)
 
 }
+
 export function resetmail(data) {
     return apiPost(SEND_RESET_PASSWORD_EMAIL, data)
 }

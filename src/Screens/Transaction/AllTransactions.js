@@ -76,7 +76,7 @@ const AllTransactions = () => {
         <View style={[styles.header]}>
           <TouchableOpacity style={styles.view}
             onPress={() => {
-              navigation.goBack()
+              navigation.navigate("MainScreen")
             }}
           >
             <Icon

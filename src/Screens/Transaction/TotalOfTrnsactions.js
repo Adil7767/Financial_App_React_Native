@@ -177,7 +177,7 @@ const TotalOfTransactions = ({ type }) => {
         catch (error) {
             console.log('TotalOfTransactions error', error)
             // let err = error.errors.trans_type;
-            // showError(err)
+            showError(error.msg)
 
 
             // navigation.goBack()
