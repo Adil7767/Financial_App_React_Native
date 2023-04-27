@@ -117,25 +117,15 @@
 
 import React, { useEffect, useState } from 'react';
 import { View, Text, StyleSheet, SafeAreaView, FlatList, Image } from 'react-native';
-import ButtonWithLoader from '../../Components/ButtonWithLoader';
-import TextInputWithLable from '../../Components/TextInputWithLabel';
-
-import validator from '../../utils/validations';
 import { showError, showSuccess } from '../../utils/helperFunction';
 import actions from '../../redux/actions';
-import { showMessage } from 'react-native-flash-message';
-import { ScrollView } from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigation } from '@react-navigation/native';
-import { category } from '../../redux/actions/admin';
-
-
 const TransactionList = () => {
 
   const [result, setresult] = useState()
   const navigation = useNavigation();
-  const dispatch = useDispatch();
   const txt = useSelector((state) => state)
   var token = txt?.user?.token
   const accessToken = token?.token?.access;
@@ -174,11 +164,6 @@ const TransactionList = () => {
     }
 
   }
-
-
-
-
-
   const Item = ({ title, amount, total, date, description,
     category_name, frequency, id, imagename, payment_method, payment_method_name,
     type, type_name
@@ -189,25 +174,11 @@ const TransactionList = () => {
         style={[styles.img]}
         source={{ uri: imagename }}
       />
-      {/* {console.log("ite++++++", imagename) } */}
-      {/* <Icon name={imagename} size={40} style={[styles.icon]} /> */}
       <View style={[styles.right, styles.rw]}>
         <View style={styles.clm}>
           <Text style={styles.id}>{id}</Text>
-          {/* <Text style={styles.image}></Text> */}
-          {/* <Text style={styles.title}>{title}</Text>
-          <Text style={[styles.date]}>{date}</Text> */}
           <Text style={styles.type_name}>{type_name}</Text>
-          {/* <Text style={styles.category_name}>cn:{category_name}</Text> */}
-          {/* <Text style={styles.frequency}>f:{frequency}</Text> */}
-          {/* <Text style={styles.payment_method}>pm:{payment_method}</Text> */}
-          {/* <Text style={styles.payment_method_name}>pmn:{payment_method_name}</Text> */}
-          {/* <Text style={styles.type}>type:{type}</Text> */}
           <Text style={[styles.description]}>{description}</Text>
-          {/* <Text style={styles.payment_method_name}>{payment_method_name}</Text> */}
-          {/* <Text style={styles.payment_method_name}>{payment_method_name}</Text> */}
-
-
         </View>
         <View style={styles.clm}>
           <Text style={[styles.amount]} >RS:{amount}</Text>
@@ -229,7 +200,7 @@ const TransactionList = () => {
       renderItem={({ item }) => <Item
         id={item.id}
         title={item.title}
-        amount={item.amount} total={item.total}
+        amount={Math.round(item.amount)} total={item.total}
         date={item.date}
         description={item.description}
 
@@ -291,7 +262,8 @@ const styles = StyleSheet.create({
   amount: {
     fontSize: 15,
     textAlign: 'right',
-    color: 'black'
+    color: 'black',
+    paddingEnd: '2%'
   },
 
   img: {
@@ -353,20 +325,4 @@ const styles = StyleSheet.create({
 
 
 export default TransactionList;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

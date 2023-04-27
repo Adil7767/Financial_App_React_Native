@@ -49,6 +49,15 @@ const ExpencesHeader = ({ navigation, AdArt }) => {
                         <Text style={[styles.font]}>{AdArt}</Text>
                     </View>
                     <View style={{ flexDirection: "column" }}>
+                        {/* <TouchableOpacity style={styles.view}
+                            onPress={() => {
+                                navigation.navigate('SearchBoxModal')
+                            }}>
+                            <Icon
+                                name="search"
+                                style={[styles.icon]}
+                            ></Icon>
+                        </TouchableOpacity> */}
                         <TouchableOpacity style={styles.view}
                             onPress={() => {
                                 navigation.navigate('SearchBoxModal')

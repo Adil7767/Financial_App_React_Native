@@ -1,10 +1,11 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { TransactionList } from '../../index'
 
 const Others = () => {
     return (
         <View>
-            <Text>Others</Text>
+            <TransactionList />
         </View>
     )
 }

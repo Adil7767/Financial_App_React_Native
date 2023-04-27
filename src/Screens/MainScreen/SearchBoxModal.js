@@ -79,33 +79,100 @@
 
 
 
-import React, { useState } from 'react';
-import { View, Text, TextInput, Button, Modal, StyleSheet } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, TextInput, Button, Modal, StyleSheet, Image } from 'react-native';
 import { useSelector } from "react-redux";
-import Icon from 'react-native-vector-icons/FontAwesome5';
+import actions from "../../redux/actions/index";
+// import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import { showError } from '../../utils/helperFunction';
+import { empty } from 'is_js';
+import ButtonWithLoader from '../../Components/ButtonWithLoader';
+import { TouchableOpacity, TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import TextInputWithLable from '../../Components/TextInputWithLabel';
 
-const SearchBoxModal = ({ aa }) => {
-  const data = useSelector((state) => state)
-  var aa = data.user.DATA2
-  console.log('Seach Box Modal', aa)
+const SearchBoxModal = () => {
+
+  const txt = useSelector((state) => state)
+  var token = txt?.user?.token
+  const accessToken = token?.token?.access;
+  const DATA = useSelector((state) => state.user);
+  const Data = DATA.userData;
+  const [result, setresult] = useState(null)
+  const [isLoading, setisLoading] = useState(false)
+  console.log('result', result)
   const [searchQuery, setSearchQuery] = useState('');
   const [filteredData, setFilteredData] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
+  useEffect(() => {
+    onTransactionList()
+  }, []);
 
-  const handleSearch = () => {
-    const filtered = aa.filter((item) => {
-      const searchLower = searchQuery.toLowerCase();
-      const titleLower = typeof item.title === 'string' ? item.title.toLowerCase() : '';
-      const descriptionLower = typeof item.description === 'string' ? item.description.toLowerCase() : '';
-      const amountStr = typeof item.amount === 'number' ? item.amount.toString() : '';
-      return (
-        titleLower.includes(searchLower) ||
-        descriptionLower.includes(searchLower) ||
-        amountStr.includes(searchQuery)
-      );
-    });
-    setFilteredData(filtered);
-    setModalVisible(true);
+  const onTransactionList = async () => {
+
+    try {
+      const res = await actions.transactionget({
+        // trans_type,
+      },
+        {
+          'Authorization': `Bearer ${accessToken}`,
+          'Content-Type': 'multipart/form-data',
+        }
+      )
+      console.log("res of search==>>>>>", res.results)
+      setresult(res.results)
+    }
+    catch (error) {
+      console.log('Transaction search error==========>', error)
+    }
+  }
+  const handleSearch = async () => {
+    if (searchQuery == '') {
+      showError('First type somthing')
+    }
+    else {
+      try {
+        setisLoading(true)
+
+        if (!result) {
+          showError('Data Loading plz bit wait ')
+        } else {
+          const filtered = await result.filter((item) => {
+            const searchLower = searchQuery.toLowerCase();
+            const frequencyLower = typeof item.frequency === 'string' ? item.frequency.toLowerCase() : '';
+            const type_nameLower = typeof item.type_name === 'string' ? item.type_name.toLowerCase() : '';
+            const category_nameLower = typeof item.category_name === 'string' ? item.category_name.toLowerCase() : '';
+            const descriptionLower = typeof item.description === 'string' ? item.description.toLowerCase() : '';
+            const amountLower = typeof item.amount === 'string' ? item.amount.toLowerCase() : '';
+            const typeStr = typeof item.type === 'number' ? item.type.toString() : '';
+            const IdStr = typeof item.id === 'number' ? item.id.toString() : '';
+            return (
+              type_nameLower.includes(searchLower) ||
+              descriptionLower.includes(searchLower) ||
+              category_nameLower.includes(searchLower) ||
+              frequencyLower.includes(searchLower) ||
+              amountLower.includes(searchLower) ||
+              typeStr.includes(searchQuery) ||
+              IdStr.includes(searchQuery)
+
+            );
+          });
+          // if (filtered == []) {
+          //   console.log('no data found')
+          //   setFilteredData([{ description: 'no data match' }]);
+          // } else {
+          setFilteredData(filtered);
+          setModalVisible(true);
+          setisLoading(false)
+
+          // }
+        }
+      }
+      catch (error) {
+        setisLoading(false)
+        console.log(error)
+      }
+    }
   };
 
   const handleCloseModal = () => {
@@ -116,27 +183,76 @@ const SearchBoxModal = ({ aa }) => {
 
   return (
     <View style={styles.container}>
-      <TextInput
+      {/* <TextInput
         placeholder="Search"
         value={searchQuery}
         onChangeText={(text) => setSearchQuery(text)}
         style={styles.searchInput}
-      />
-      <Button
+        maxLength={20}
+     
+      /> */}
+      <TextInputWithLable
+        // label="Search"
+        placeholder="set query"
+        // onChangeText={(type) => updateState({ type })}
+        onChangeText={(text) => {
+          // if (text.trim().length === 0) {
+          //   console.log('no data');
+          // } else {
+          setSearchQuery(text)
+          // }
+        }
+        }
+      // keyboardType="numeric"
+      // maxLength={20}
+      // minLength={1}
+      ></TextInputWithLable>
+
+
+
+
+      <ButtonWithLoader
+        isLoading={isLoading}
+        text="Search"
+        onPress={handleSearch}
         title="Search"
-        onPress={handleSearch} />
-      <Modal animationType="slide" visible={modalVisible} onRequestClose={handleCloseModal}>
+      />
+      <Modal
+        animationType="slide"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={handleCloseModal}
+      >
         <View style={styles.modalContainer}>
-          {/* <Button title="Close" onPress={handleCloseModal} /> */}
+
+          <TouchableOpacity onPress={handleCloseModal}>
+
+          </TouchableOpacity>
+
+
           <Text style={[styles.txt]}>Search transactions</Text>
-
-
           {filteredData.map((item) => (
-            <View key={item.id} style={styles.itemContainer}>
-              <Text style={styles.title}>Id:{item.id}</Text>
-              <Text style={styles.title}>Name:{item.title}</Text>
-              <Text style={styles.description}>{item.description}</Text>
-              <Text style={styles.amount}>Rs:{item.amount}</Text>
+            <View style={styles.item}>
+              <Image
+                style={[styles.img]}
+                source={{ uri: item.image }}
+              />
+              <View style={[styles.right, styles.rw]}>
+                <View style={styles.clm}>
+                  <Text style={styles.id}>{item.id}</Text>
+                  <Text style={styles.type_name}>{item.type_name}</Text>
+                  <Text style={[styles.description]}>{item.description}</Text>
+                </View>
+                <View style={styles.clm}>
+                  <Text style={[styles.amount]} >RS:{item.amount}</Text>
+                  <View style={[styles.rw]}>
+                    <Icon name='bank' size={30} style={[styles.icon]} />
+                    <Text style={[styles.amount]} >...</Text>
+                  </View>
+                  <Text style={[styles.icon]} >{item.category_name}</Text>
+
+                </View>
+              </View>
             </View>
           ))}
         </View>
@@ -148,6 +264,7 @@ const SearchBoxModal = ({ aa }) => {
 const styles = StyleSheet.create({
   container: {
     padding: 10,
+    // backgroundColor: 'red'
 
   },
   searchInput: {
@@ -158,9 +275,8 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   modalContainer: {
+    flex: 1,
     backgroundColor: '#fff',
-    padding: 10,
-    margin: 5,
     borderRadius: 5,
     shadowColor: '#000',
     shadowOffset: {
@@ -198,6 +314,92 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
 
   },
+  btn: {
+    alignItems: 'center'
+  },
+
+  item: {
+    padding: 8,
+    // marginVertical: 8,
+
+    marginHorizontal: 10,
+    flexDirection: 'row',
+    backgroundColor: "white",
+    alignItems: 'center',
+
+
+  },
+  id: {
+    color: 'red'
+  },
+  title: {
+    maxWidth: "100%",
+    // fontSize: 20,
+    color: 'black'
+  },
+  amount: {
+    fontSize: 15,
+    textAlign: 'right',
+    color: 'black',
+    // paddingEnd: '10%'
+  },
+
+  img: {
+    width: 40,
+    height: 40,
+    borderRadius: 50,
+    marginRight: 2,
+    // marginLeft: 0
+  },
+  icon: {
+    flex: 0,
+    paddingRight: 5,
+    color: 'green',
+  },
+  right: {
+    flex: 1,
+    justifyContent: "space-between",
+
+  },
+  date: {
+    textAlignVertical: 'bottom',
+    color: 'black'
+  },
+  clm: {
+    flexDirection: 'column',
+
+
+  },
+  rw: {
+    flexDirection: 'row',
+  },
+  category_name: {
+    color: 'red'
+  },
+  frequency: {
+    color: 'green'
+  },
+  payment_method: {
+    color: 'aqua'
+  }, payment_method_name: {
+    color: 'yellow'
+  },
+  type: {
+    color: 'pink'
+  },
+  category_name: {
+    color: 'blue'
+  },
+  type_name: {
+    color: 'purple'
+  },
+  description: {
+    color: 'orange',
+    maxWidth: '90%'
+  },
+
+
+
 });
 
 export default SearchBoxModal;

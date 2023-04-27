@@ -88,6 +88,7 @@ export async function apiReq(
 
 export async function apiPost(endPoint, data, headers = {}) {
 	return await apiReq(endPoint, data, 'post', headers);
+
 }
 
 export function apiDelete(endPoint, data, headers = {}) {

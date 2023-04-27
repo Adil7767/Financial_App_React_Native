@@ -5,11 +5,13 @@ import {
   AllTransactionHeader,
   Income, Others,
   Expences,
-  TotalOfTransactions
+  TotalOfTransactions,
+  Expence
 } from "../../index"
 import { useNavigation } from '@react-navigation/native';
 import TransactionAddButton from '../../Components/TransactionAddButton';
 import Icon from 'react-native-vector-icons/AntDesign';
+import { ScrollView } from 'react-native-gesture-handler';
 
 const AllTransactions = () => {
 
@@ -34,26 +36,33 @@ const AllTransactions = () => {
 
   const renderScreen = () => {
     if (activeButton === 'Expences') {
+      // const type_name = 'EXPENSE'
       return (
         <View style={styles.list}>
           <TotalOfTransactions type={5} />
-          <TransactionList />
+          <Expence />
+
+          {/* <TransactionList type_name={type_name} /> */}
         </View>
       );
     } else if (activeButton === 'Income') {
+      // const type_name = 'INCOME'
 
       return (
         <View>
           <TotalOfTransactions type={6} />
+          {/* <TransactionList type_name={type_name} /> */}
 
           <Income />
         </View>
       );
     } else if (activeButton === 'Others') {
 
+
       return (
         <View>
-          <TotalOfTransactions type={1} />
+          <TotalOfTransactions type={6} />
+          <TransactionList />
           <Others />
         </View>
 

@@ -18,6 +18,7 @@ const MainScreenHeader = ({ navigation, AdArt }) => {
       <Modal
         animationType={'fade'}
         transparent={true}
+        // visible={modalVisible}
         // onModalShow={() => console.log('I am Modal')}
         visible={showModal}
         onRequestClose={() => {

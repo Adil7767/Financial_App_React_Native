@@ -22,7 +22,7 @@ const Profile = () => {
     console.log('user', userData)
     useEffect(() => {
         // Define the API endpoint URL and your access token
-        const apiUrl = 'https://953f-103-153-39-9.ngrok-free.app/api/profile/';
+        const apiUrl = 'https://a3a5-39-53-111-182.ngrok-free.app/api/profile/';
         const accessToken = AA;
         console.log('token', accessToken)
         // Send a request to the API endpoint

@@ -166,8 +166,8 @@ const TotalOfTransactions = ({ type }) => {
 
             console.log("res of TotalOfTransactions==>>>>>", res)
             // showMessage("password Change successfully...!!!! Please ReLogin")
-            sum2 = res.data.amount__sum;
-            sum1 = res.type;
+            var sum2 = res.data.amount__sum;
+            var sum1 = res.type;
             const sum = sum1 + "  " + sum2;
             console.log('sum', sum1 + "  " + sum2)
             setresult(sum)
