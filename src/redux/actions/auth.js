@@ -1,5 +1,5 @@
 import { LOGIN, SIGNUP, PROFILE, CHANGE_PASSWORD, SEND_RESET_PASSWORD_EMAIL, RESET_PASSWORD } from "../../config/urls";
-import { apiPost, clearUserData, setUserData } from "../../utils/utils";
+import { apiGet, apiPost, clearUserData, setUserData } from "../../utils/utils";
 import store from "../store";
 import types from "../types";
 
@@ -18,11 +18,15 @@ export const saveUserData = (data) => {
 
     )
 }
+// export function login(data) {
+//     return apiPost(LOGIN, data)
+
+// }
 
 export function login(data) {
     return new Promise((resolve, reject) => {
         return apiPost(LOGIN, data).then((res) => {
-            // if (res.data.emailVerified) {
+            // if (res.data.) {emailVerified
             if (res.data) {
                 setUserData(res.data).then(() => {
                     resolve(res)
@@ -42,6 +46,7 @@ export function signup(data) {
     return apiPost(SIGNUP, data)
 
 }
+
 export function resetmail(data) {
     return apiPost(SEND_RESET_PASSWORD_EMAIL, data)
 }
@@ -51,11 +56,16 @@ export function resetpassword(data) {
 export function changepassword(data, headers) {
     return apiPost(CHANGE_PASSWORD, data, headers)
 }
+export function profile(headers) {
+    return apiGet(PROFILE, headers);
+}
 export function logout() {
     dispatch({ type: types.CLEAR_REDUX_STATE })
     clearUserData()
 }
-export function profile() {
-    dispatch({ type: types.PROFILE })
 
-}
+
+// export function profile() {
+//     dispatch({ type: types.PROFILE, headers })
+
+// }

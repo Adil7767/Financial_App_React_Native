@@ -18,6 +18,7 @@ const MainScreenHeader = ({ navigation, AdArt }) => {
       <Modal
         animationType={'fade'}
         transparent={true}
+        // visible={modalVisible}
         // onModalShow={() => console.log('I am Modal')}
         visible={showModal}
         onRequestClose={() => {
@@ -121,7 +122,7 @@ const styles = StyleSheet.create({
 
   },
   font: {
-    fontSize: 35,
+    fontSize: 30,
     fontStyle: 'bold',
     fontWeight: '500',
     color: "#483d8b",

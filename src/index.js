@@ -9,13 +9,12 @@ export { default as Profile } from './Screens/Profile/Profile';
 
 // auth stack
 // export { default as LoginScreen } from './Screens/MainScreen/LoginScreen';
-// export { default as RegisterScreen } from './Screens/MainScreen/RegisterScreen';
 // MainStack
 // export { default as Home } from './Screens/MainScreen/Home';
 export { default as MainScreen } from './Screens/MainScreen/MainScreen';
 export { default as MainScreenHeader } from './Screens/MainScreen/MainScreenHeader';
 export { default as AddTransactions } from './Screens/Transaction/AddTransactions';
-// export { default as TransactionList } from './Screens/Transaction/TransactionList';
+export { default as TransactionType } from './Screens/Transaction/TransactionType';
 export { default as AllTransactions } from './Screens/Transaction/AllTransactions';
 export { default as TransactionList } from './Screens/Transaction/TransactionList'
 export { default as Bills } from './Screens/Bills/Bills';
@@ -23,7 +22,14 @@ export { default as BillsCard } from './Screens/Bills/BillsCard';
 export { default as Card } from './Screens/MainScreen/Card';
 export { default as Control } from './Screens/MainScreen/Control';
 export { default as DrawerModal } from './Screens/MainScreen/DrawerModal/DrawerModal';
-// export { default as Profile } from './Screens/MainScreen/Profile';
+export { default as Income } from './Screens/Transaction/Income';
+export { default as Others } from './Screens/Transaction/Others';
+export { default as Expence } from './Screens/Transaction/Expence';
+export { default as TotalOfTransactions } from './Screens/Transaction/TotalOfTrnsactions';
+export { default as ImagePicker1 } from './Screens/Transaction/ImagePicker1';
+export { default as ShowHide } from './Screens/Transaction/ShowHide';
+
+export { default as AllTransactionHeader } from './Screens/Transaction/AllTransactionHeader';
 export { default as SearchBoxModal } from './Screens/MainScreen/SearchBoxModal';
 export { default as Expences } from './Screens/Expences/Expences';
 export { default as QuikNavigationList } from './Screens/MainScreen/DrawerModal/QuikNavigationList';
@@ -36,7 +42,6 @@ export { default as Help } from './Screens/MainScreen/DrawerModal/Help';
 export { default as CashTransactions } from './Screens/Transaction/CashTransactions';
 export { default as ForgetPasssword } from './Screens/PasswordScreens/ForgetPasssword';
 export { default as ResetPassword } from './Screens/PasswordScreens/ResetPassword';
-// export { default as TokenSet } from './Screens/MainScreen/TokenSet';
 export { default as ChangePassword } from './Screens/Profile/ChangePassword';
 export { default as BackgroungImage } from './Screens/MainScreen/BackgroungImage';
 export { default as NavList } from './Screens/MainScreen/DrawerModal/NavList';

@@ -24,7 +24,8 @@ import {
     MyWidget,
     BackUpModal,
     BackUpOffModal,
-    ChangePassword
+    ChangePassword,
+    AllTransactionHeader
 
 } from '../index';
 import TabRoutes from "./TabRoutes";
@@ -91,7 +92,13 @@ export default function (Stack) {
             <Stack.Screen
                 name="AllTransactions"
                 component={AllTransactions}
-            // options={{ headerShown: false }}
+                options={{ headerShown: false }}
+
+            />
+            <Stack.Screen
+                name="AllTransactionHeader"
+                component={AllTransactionHeader}
+                options={{ headerShown: false }}
 
             />
             <Stack.Screen

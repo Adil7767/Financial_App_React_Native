@@ -12,95 +12,115 @@
 11-->/home/workspace/Android/Projects/financial-app-react/android/app/src/debug/AndroidManifest.xml:5:5-77
 11-->/home/workspace/Android/Projects/financial-app-react/android/app/src/debug/AndroidManifest.xml:5:22-75
 12    <uses-permission android:name="android.permission.INTERNET" />
-12-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:4:5-67
-12-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:4:22-64
-13    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-13-->[com.facebook.flipper:flipper:0.125.0] /home/workspace/.gradle/caches/transforms-3/03f04a3f11198ce3b7c6cedb9b41266b/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:5-76
-13-->[com.facebook.flipper:flipper:0.125.0] /home/workspace/.gradle/caches/transforms-3/03f04a3f11198ce3b7c6cedb9b41266b/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:22-73
-14    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
-14-->[:react-native-biometrics] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-biometrics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-72
-14-->[:react-native-biometrics] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-biometrics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-69
-15    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
-15-->[:react-native-biometrics] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-biometrics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-74
-15-->[:react-native-biometrics] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-biometrics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-71
-16    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-16-->[:react-native-fs] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-fs/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-81
-16-->[:react-native-fs] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-fs/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-78
-17
-18    <application
-18-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:6:5-26:19
-19        android:name="com.AdArt.MainApplication"
-19-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:7:7-38
-20        android:allowBackup="false"
-20-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:11:7-34
-21        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-21-->[androidx.core:core:1.7.0] /home/workspace/.gradle/caches/transforms-3/63a3df243d2d102452600006144a86df/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
-22        android:debuggable="true"
-23        android:icon="@mipmap/ic_launcher"
-23-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:9:7-41
-24        android:label="@string/app_name"
-24-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:8:7-39
-25        android:roundIcon="@mipmap/ic_launcher_round"
-25-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:10:7-52
-26        android:theme="@style/AppTheme"
-26-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:12:7-38
-27        android:usesCleartextTraffic="true" >
-27-->/home/workspace/Android/Projects/financial-app-react/android/app/src/debug/AndroidManifest.xml:8:9-44
-28        <activity
-28-->/home/workspace/Android/Projects/financial-app-react/android/app/src/debug/AndroidManifest.xml:11:9-111
-29            android:name="com.facebook.react.devsupport.DevSettingsActivity"
-29-->/home/workspace/Android/Projects/financial-app-react/android/app/src/debug/AndroidManifest.xml:11:19-83
-30            android:exported="false" />
-30-->/home/workspace/Android/Projects/financial-app-react/android/app/src/debug/AndroidManifest.xml:11:84-108
-31        <activity
-31-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:13:7-25:18
-32            android:name="com.AdArt.MainActivity"
-32-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:14:9-37
-33            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
-33-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:16:9-118
-34            android:exported="true"
-34-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:20:9-32
-35            android:label="@string/app_name"
-35-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:15:9-41
-36            android:launchMode="singleTask"
-36-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:17:9-40
-37            android:screenOrientation="portrait"
-37-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:19:9-45
-38            android:windowSoftInputMode="adjustResize" >
-38-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:18:9-51
-39            <intent-filter>
-39-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:21:9-24:25
-40                <action android:name="android.intent.action.MAIN" />
-40-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:22:13-65
-40-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:22:21-62
-41
-42                <category android:name="android.intent.category.LAUNCHER" />
-42-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:23:13-73
-42-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:23:23-70
-43            </intent-filter>
-44        </activity>
-45
-46        <provider
-46-->[androidx.emoji2:emoji2:1.0.0] /home/workspace/.gradle/caches/transforms-3/b6fe4da57007a43d86a66ba4c66459bd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
-47            android:name="androidx.startup.InitializationProvider"
-47-->[androidx.emoji2:emoji2:1.0.0] /home/workspace/.gradle/caches/transforms-3/b6fe4da57007a43d86a66ba4c66459bd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
-48            android:authorities="com.AdArt.androidx-startup"
-48-->[androidx.emoji2:emoji2:1.0.0] /home/workspace/.gradle/caches/transforms-3/b6fe4da57007a43d86a66ba4c66459bd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
-49            android:exported="false" >
-49-->[androidx.emoji2:emoji2:1.0.0] /home/workspace/.gradle/caches/transforms-3/b6fe4da57007a43d86a66ba4c66459bd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
-50            <meta-data
-50-->[androidx.emoji2:emoji2:1.0.0] /home/workspace/.gradle/caches/transforms-3/b6fe4da57007a43d86a66ba4c66459bd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
-51                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-51-->[androidx.emoji2:emoji2:1.0.0] /home/workspace/.gradle/caches/transforms-3/b6fe4da57007a43d86a66ba4c66459bd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
-52                android:value="androidx.startup" />
-52-->[androidx.emoji2:emoji2:1.0.0] /home/workspace/.gradle/caches/transforms-3/b6fe4da57007a43d86a66ba4c66459bd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
-53            <meta-data
-53-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/workspace/.gradle/caches/transforms-3/bc74a39e1ea23fea00bfcf2682a93948/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
-54                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-54-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/workspace/.gradle/caches/transforms-3/bc74a39e1ea23fea00bfcf2682a93948/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
-55                android:value="androidx.startup" />
-55-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/workspace/.gradle/caches/transforms-3/bc74a39e1ea23fea00bfcf2682a93948/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
-56        </provider>
-57    </application>
-58
-59</manifest>
+12-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:3:5-67
+12-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:3:22-64
+13    <uses-permission android:name="android.permission.CAMERA" />
+13-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:4:1-60
+13-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:4:18-58
+14    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+14-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:5:1-76
+14-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:5:18-74
+15    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+15-->[com.facebook.flipper:flipper:0.125.0] /home/workspace/.gradle/caches/transforms-3/03f04a3f11198ce3b7c6cedb9b41266b/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:5-76
+15-->[com.facebook.flipper:flipper:0.125.0] /home/workspace/.gradle/caches/transforms-3/03f04a3f11198ce3b7c6cedb9b41266b/transformed/jetified-flipper-0.125.0/AndroidManifest.xml:16:22-73
+16    <uses-permission android:name="android.permission.USE_BIOMETRIC" />
+16-->[:react-native-biometrics] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-biometrics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-72
+16-->[:react-native-biometrics] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-biometrics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:22-69
+17    <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+17-->[:react-native-biometrics] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-biometrics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-74
+17-->[:react-native-biometrics] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-biometrics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:22-71
+18
+19    <application
+19-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:6:5-26:19
+20        android:name="com.AdArt.MainApplication"
+20-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:7:7-38
+21        android:allowBackup="false"
+21-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:11:7-34
+22        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+22-->[androidx.core:core:1.7.0] /home/workspace/.gradle/caches/transforms-3/63a3df243d2d102452600006144a86df/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
+23        android:debuggable="true"
+24        android:icon="@mipmap/ic_launcher"
+24-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:9:7-41
+25        android:label="@string/app_name"
+25-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:8:7-39
+26        android:roundIcon="@mipmap/ic_launcher_round"
+26-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:10:7-52
+27        android:theme="@style/AppTheme"
+27-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:12:7-38
+28        android:usesCleartextTraffic="true" >
+28-->/home/workspace/Android/Projects/financial-app-react/android/app/src/debug/AndroidManifest.xml:8:9-44
+29        <activity
+29-->/home/workspace/Android/Projects/financial-app-react/android/app/src/debug/AndroidManifest.xml:11:9-111
+30            android:name="com.facebook.react.devsupport.DevSettingsActivity"
+30-->/home/workspace/Android/Projects/financial-app-react/android/app/src/debug/AndroidManifest.xml:11:19-83
+31            android:exported="false" />
+31-->/home/workspace/Android/Projects/financial-app-react/android/app/src/debug/AndroidManifest.xml:11:84-108
+32        <activity
+32-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:13:7-25:18
+33            android:name="com.AdArt.MainActivity"
+33-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:14:9-37
+34            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+34-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:16:9-118
+35            android:exported="true"
+35-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:20:9-32
+36            android:label="@string/app_name"
+36-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:15:9-41
+37            android:launchMode="singleTask"
+37-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:17:9-40
+38            android:screenOrientation="portrait"
+38-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:19:9-45
+39            android:windowSoftInputMode="adjustResize" >
+39-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:18:9-51
+40            <intent-filter>
+40-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:21:9-24:25
+41                <action android:name="android.intent.action.MAIN" />
+41-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:22:13-65
+41-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:22:21-62
+42
+43                <category android:name="android.intent.category.LAUNCHER" />
+43-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:23:13-73
+43-->/home/workspace/Android/Projects/financial-app-react/android/app/src/main/AndroidManifest.xml:23:23-70
+44            </intent-filter>
+45        </activity>
+46
+47        <provider
+47-->[:react-native-image-picker] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:9-18:20
+48            android:name="com.imagepicker.ImagePickerProvider"
+48-->[:react-native-image-picker] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:13-63
+49            android:authorities="com.AdArt.imagepickerprovider"
+49-->[:react-native-image-picker] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:12:13-71
+50            android:exported="false"
+50-->[:react-native-image-picker] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:13:13-37
+51            android:grantUriPermissions="true" >
+51-->[:react-native-image-picker] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:14:13-47
+52            <meta-data
+52-->[:react-native-image-picker] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:13-17:70
+53                android:name="android.support.FILE_PROVIDER_PATHS"
+53-->[:react-native-image-picker] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:16:17-67
+54                android:resource="@xml/imagepicker_provider_paths" />
+54-->[:react-native-image-picker] /home/workspace/Android/Projects/financial-app-react/node_modules/react-native-image-picker/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:17:17-67
+55        </provider>
+56        <provider
+56-->[androidx.emoji2:emoji2:1.0.0] /home/workspace/.gradle/caches/transforms-3/b6fe4da57007a43d86a66ba4c66459bd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
+57            android:name="androidx.startup.InitializationProvider"
+57-->[androidx.emoji2:emoji2:1.0.0] /home/workspace/.gradle/caches/transforms-3/b6fe4da57007a43d86a66ba4c66459bd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
+58            android:authorities="com.AdArt.androidx-startup"
+58-->[androidx.emoji2:emoji2:1.0.0] /home/workspace/.gradle/caches/transforms-3/b6fe4da57007a43d86a66ba4c66459bd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
+59            android:exported="false" >
+59-->[androidx.emoji2:emoji2:1.0.0] /home/workspace/.gradle/caches/transforms-3/b6fe4da57007a43d86a66ba4c66459bd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
+60            <meta-data
+60-->[androidx.emoji2:emoji2:1.0.0] /home/workspace/.gradle/caches/transforms-3/b6fe4da57007a43d86a66ba4c66459bd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+61                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+61-->[androidx.emoji2:emoji2:1.0.0] /home/workspace/.gradle/caches/transforms-3/b6fe4da57007a43d86a66ba4c66459bd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
+62                android:value="androidx.startup" />
+62-->[androidx.emoji2:emoji2:1.0.0] /home/workspace/.gradle/caches/transforms-3/b6fe4da57007a43d86a66ba4c66459bd/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
+63            <meta-data
+63-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/workspace/.gradle/caches/transforms-3/bc74a39e1ea23fea00bfcf2682a93948/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+64                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+64-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/workspace/.gradle/caches/transforms-3/bc74a39e1ea23fea00bfcf2682a93948/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
+65                android:value="androidx.startup" />
+65-->[androidx.lifecycle:lifecycle-process:2.4.0] /home/workspace/.gradle/caches/transforms-3/bc74a39e1ea23fea00bfcf2682a93948/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+66        </provider>
+67    </application>
+68
+69</manifest>

@@ -26,16 +26,16 @@ const Expences = ({ navigation }) => {
                     <Chart navigation={navigation} />
                 </View>
             </View>
-            <Text style={[styles.txt]}>Latest Transactions</Text>
-            <AllTransactions />
-            <Button
+            {/* <Text style={[styles.txt]}>Latest Transactions</Text> */}
+            {/* <AllTransactions /> */}
+            {/* <Button
                 onPress={() => {
                     navigation.navigate('AddTransactions')
                 }}
                 title="Add Transaction"
                 color="#841584"
 
-            />
+            /> */}
         </ScrollView>
     );
 }
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     },
     txt: {
         padding: 8,
-        fontSize: 30,
+        fontSize: 20,
         backgroundColor: "#FBFBFB",
         marginHorizontal: 10,
         color: 'black'

@@ -57,11 +57,14 @@ const Login = ({ navigation }) => {
 
             } catch (error) {
                 console.log('login error', error);
-                showError(error.message);
+                // showError(error.message);
                 updateState({ isLoading: false });
-                // let err = error.errors.non_field_errors;
-                // showError(err)
-
+                if (!error.errors.non_field_errors) {
+                    showError(error.msg)
+                } else {
+                    let err = error.errors.non_field_errors;
+                    showError(err)
+                }
             }
         }
     };

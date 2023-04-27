@@ -1,5 +1,4 @@
-import React from 'react'
-import { Button } from 'react-native';
+import React, { useState, useEffect } from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
@@ -15,11 +14,45 @@ import {
   AllTransactions,
   MyWidget,
 } from '../../index'
-// import { BackHandler } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { showError } from '../../utils/helperFunction';
+import actions from '../../redux/actions/index'
 
-const MainScreen = ({ navigation }) => {
-  const data = useSelector((state) => state)
-  var sum = data.user.TotalSum
+const MainScreen = () => {
+  const navigation = useNavigation();
+  const [result, setresult] = useState()
+  const txt = useSelector((state) => state)
+  var token = txt?.user?.token
+  const accessToken = token?.token?.access;
+  const DATA = useSelector((state) => state.user);
+  const Data = DATA.userData;
+  var trans_type = 3;
+
+  useEffect(() => {
+    onTotalOfTransactions(trans_type)
+  }, [trans_type]);
+  const onTotalOfTransactions = async (trans_type) => {
+    console.log('trans_type', trans_type)
+    try {
+      const res = await actions.total_transaction({
+        trans_type,
+      },
+        {
+          'Authorization': `Bearer ${accessToken}`,
+          'Content-Type': 'multipart/form-data',
+        }
+      )
+      console.log("res of TotalOfTransactions==>>>>>", res)
+      var sum = res.data.amount__sum;
+      setresult(sum)
+    }
+    catch (error) {
+      console.log('Total amount error', error)
+
+    }
+
+  }
+
   // var aa=data.user.transactions=data.user.transactions.push(1)
   // console.log('sum', sum)
 
@@ -64,7 +97,7 @@ const MainScreen = ({ navigation }) => {
             <Icon name='cash' size={32} style={[styles.icon, { color: 'green' }]} />
             <View style={[styles.clm]}>
               <Text>Cash in hand</Text>
-              <Text >     {sum}</Text>
+              <Text >     {result}</Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity style={[styles.rw, styles.sidebyside]} onPress={() => {

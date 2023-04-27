@@ -45,7 +45,7 @@ const ForgetPasssword = ({ navigation }) => {
                 const res = await actions.resetmail({
                     email
                 })
-                console.log("res==>>>>>", res)
+                console.log("res=====>>>>>", res)
                 showSuccess(res.msg)
                 updateState({ isLoading: false })
                 navigation.navigate('ResetPassword')

@@ -1,158 +1,249 @@
+
+
 // import React from 'react';
 // import {
+//   View,
+//   FlatList,
 //   StyleSheet,
 //   Text,
-//   View,
-// TouchableOpacity,
-//   SectionList,
-//   StatusBar,
+
 // } from 'react-native';
-// import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+// import { ScrollView } from 'react-native-gesture-handler';
 // import { useSelector } from "react-redux";
+// import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-// const DATA = [
-//   {
-//     title: 'Latest transactions',
-//     amount:'to',
-//     data:[Math.random()*10,Math.random()*10,Math.random()*10,Math.random()*10]
-//   },
+// const Item = ({ title, amount, total, date, description }) => (
 
-// ];
-// const List=(item)=>{
-//   const data = useSelector((state) => state)
-//   var AA = data.user.DATA
-//   // var aa=data.user.transactions=data.user.transactions.push(1)
-//   console.log(AA)
-//     const aa =Date();
-//     return(
-// <View style={{flexDirection:'row'}}>
-//         <View>
-// <Icon amount='rotate-3d-variant' size={30} />
-// </View>
-// <View style={{flexDirection:'column'}}>
-//         <Text>{item}</Text>
-//         <Text>{item}</Text>
-//         <Text>{aa}</Text>
+//   <View style={styles.item}>
+//     <Icon name='rotate-3d-variant' size={40} style={[styles.icon]} />
+//     <View style={[styles.right, styles.rw]}>
+//       <View style={styles.clm}>
+//         <Text style={styles.title}>{title}</Text>
+//         {/* <Text style={styles.amount}>RS:{amount}</Text> */}
+//         <Text style={[styles.date]}>{date}</Text>
+//         <Text style={[styles.date]}>{description}</Text>
+
+//       </View>
+//       <View style={styles.clm}>
+//         <Text style={[styles.amount]} >RS:{amount}</Text>
+//         <View style={[styles.rw]}>
+//           <Icon name='bank' size={30} style={[styles.icon]} />
+//           <Text style={[styles.amount]} >{total}</Text>
 //         </View>
-//         <Text>{item}</Text>
-//           </View>
-//     )
-// }
-// // style={{margin:5}}
-// const TransactionList = () => (
-
-//     <SectionList
-//     sections={DATA}
-//     keyExtractor={(item, index) => item + index}
-//     renderItem={({item}) => (
-//         <View style={[styles.item,{margin:2}]}>
-//           <Text style={styles.title}>{List(item)}</Text>
-//         </View>
-//       )}
-
-//       renderSectionHeader={({section: {title}}) => (
-//           <Text style={styles.header}>{title}</Text>
-//           )}
-//           />
-
-
+//         {/* <Text style={styles.title}>N</Text> */}
+//       </View>
+//     </View>
+//   </View>
 // );
+// const TransactionList = () => {
+//   const data = useSelector((state) => state)
+//   // const DATA=useSelector((state) => state)
+//   var aa = data.user.DATA2
+//   // var aa=data.user.transactions=data.user.transactions.push(1)
+//   // console.log('aa', aa)
+
+//   return (
+
+
+// <FlatList
+//   data={aa}
+//   renderItem={({ item }) => <Item title={item.title}
+//     amount={item.amount} total={item.total}
+//     date={item.date}
+//     description={item.description} />
+
+//   }
+//   keyExtractor={item => item.id}
+// />
 
 
 
-
+//   );
+// };
 
 // const styles = StyleSheet.create({
 //   container: {
-//     flex: 0,
-//     paddingTop: StatusBar.currentHeight,
-//     marginHorizontal: 16,
+//     // marginTop: 10,
+
 //   },
 //   item: {
-//     backgroundColor: '#f9c2ff',
 //     padding: 10,
-//     marginVertical: 6,
-//   },
-//   header: {
-//     fontSize: 32,
-//     backgroundColor: '#fff',
+//     // marginVertical: 8,
+//     marginHorizontal: 10,
+//     flexDirection: 'row',
+//     backgroundColor: "white",
+//     alignItems: 'center',
+
+
 //   },
 //   title: {
-//     fontSize: 24,
+//     maxWidth: "100%",
+//     // fontSize: 20,
+//     color: 'black'
 //   },
+//   amount: {
+//     fontSize: 20,
+//     textAlign: 'right',
+//     color: 'black'
+//   },
+
+//   icon: {
+//     flex: 0,
+//     paddingRight: 5,
+//     color: 'green',
+//   },
+//   right: {
+//     flex: 1,
+//     justifyContent: "space-between",
+
+//   },
+//   date: {
+//     textAlignVertical: 'bottom',
+//     color: 'black'
+//   },
+//   clm: {
+//     flexDirection: 'column'
+//   },
+//   rw: {
+//     flexDirection: 'row',
+//   }
+
 // });
 
 // export default TransactionList;
 
-import React from 'react';
-import {
-  View,
-  FlatList,
-  StyleSheet,
-  Text,
 
-} from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
-import { useSelector } from "react-redux";
+
+
+import React, { useEffect, useState } from 'react';
+import { View, Text, StyleSheet, SafeAreaView, FlatList, Image } from 'react-native';
+import { showError, showSuccess } from '../../utils/helperFunction';
+import actions from '../../redux/actions';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigation } from '@react-navigation/native';
+const TransactionList = () => {
 
-const Item = ({ title, amount, total, date, description }) => (
+  const [result, setresult] = useState()
+  const navigation = useNavigation();
+  const txt = useSelector((state) => state)
+  var token = txt?.user?.token
+  const accessToken = token?.token?.access;
+  const DATA = useSelector((state) => state.user);
+  const Data = DATA.userData;
 
-  <View style={styles.item}>
-    <Icon name='rotate-3d-variant' size={40} style={[styles.icon]} />
-    <View style={[styles.right, styles.rw]}>
-      <View style={styles.clm}>
-        <Text style={styles.title}>{title}</Text>
-        {/* <Text style={styles.amount}>RS:{amount}</Text> */}
-        <Text style={[styles.date]}>{date}</Text>
-        <Text style={[styles.date]}>{description}</Text>
 
-      </View>
-      <View style={styles.clm}>
-        <Text style={[styles.amount]} >RS:{amount}</Text>
-        <View style={[styles.rw]}>
-          <Icon name='bank' size={30} style={[styles.icon]} />
-          <Text style={[styles.amount]} >{total}</Text>
+  useEffect(() => {
+    onTransactionList()
+  }, []);
+
+  const onTransactionList = async () => {
+
+    try {
+      const res = await actions.transactionget({
+        // trans_type,
+      },
+        {
+          'Authorization': `Bearer ${accessToken}`,
+          'Content-Type': 'multipart/form-data',
+        }
+      )
+
+      console.log("res of TransactionList==>>>>>", res.results)
+
+
+      setresult(res.results)
+      // showSuccess(res.results.id)
+      // navigation.navigate('MainScreen')
+    }
+    catch (error) {
+      console.log('TransactionList error', error)
+      // let err = error.errors.trans_type;
+      showError('plz Login Again')
+
+    }
+
+  }
+  const Item = ({ title, amount, total, date, description,
+    category_name, frequency, id, imagename, payment_method, payment_method_name,
+    type, type_name
+  }) => (
+
+    <View style={styles.item}>
+      <Image
+        style={[styles.img]}
+        source={{ uri: imagename }}
+      />
+      <View style={[styles.right, styles.rw]}>
+        <View style={styles.clm}>
+          <Text style={styles.id}>{id}</Text>
+          <Text style={styles.type_name}>{type_name}</Text>
+          <Text style={[styles.description]}>{description}</Text>
         </View>
-        {/* <Text style={styles.title}>N</Text> */}
+        <View style={styles.clm}>
+          <Text style={[styles.amount]} >RS:{amount}</Text>
+          <View style={[styles.rw]}>
+            <Icon name='bank' size={30} style={[styles.icon]} />
+            <Text style={[styles.amount]} >.....{total}</Text>
+          </View>
+          {/* <Text style={styles.title}>N</Text> */}
+        </View>
       </View>
     </View>
-  </View>
-);
-const TransactionList = () => {
-  const data = useSelector((state) => state)
-  // const DATA=useSelector((state) => state)
-  var aa = data.user.DATA2
-  // var aa=data.user.transactions=data.user.transactions.push(1)
-  // console.log('aa', aa)
+  );
+
 
   return (
 
-
     <FlatList
-      data={aa}
-      renderItem={({ item }) => <Item title={item.title}
-        amount={item.amount} total={item.total}
+      data={result}
+      renderItem={({ item }) => <Item
+        id={item.id}
+        title={item.title}
+        amount={Math.round(item.amount)} total={item.total}
         date={item.date}
-        description={item.description} />
+        description={item.description}
+
+        category_name={item.category_name}
+        frequency={item.frequency}
+        imagename={item.image}
+        payment_method={item.payment_method}
+        payment_method_name={item.payment_method_name}
+        type={item.type}
+        type_name={item.type_name}
+      // description={item.description}
+
+
+
+
+
+      />
 
       }
       keyExtractor={item => item.id}
     />
-
-
-
   );
 };
-
 const styles = StyleSheet.create({
   container: {
-    // marginTop: 10,
+    flex: 1,
+    padding: 24,
+    backgroundColor: 'white',
 
   },
+  btn: {
+    alignItems: 'center'
+  },
+  txt: {
+    fontSize: 15,
+    textAlign: 'center',
+    backgroundColor: 'aqua'
+  },
+
   item: {
-    padding: 10,
+    padding: 8,
     // marginVertical: 8,
+
     marginHorizontal: 10,
     flexDirection: 'row',
     backgroundColor: "white",
@@ -160,17 +251,27 @@ const styles = StyleSheet.create({
 
 
   },
+  id: {
+    color: 'red'
+  },
   title: {
     maxWidth: "100%",
     // fontSize: 20,
     color: 'black'
   },
   amount: {
-    fontSize: 20,
+    fontSize: 15,
     textAlign: 'right',
-    color: 'black'
+    color: 'black',
+    paddingEnd: '2%'
   },
 
+  img: {
+    width: 40,
+    height: 40,
+    borderRadius: 50,
+    marginRight: 3
+  },
   icon: {
     flex: 0,
     paddingRight: 5,
@@ -186,12 +287,42 @@ const styles = StyleSheet.create({
     color: 'black'
   },
   clm: {
-    flexDirection: 'column'
+    flexDirection: 'column',
+
+
   },
   rw: {
     flexDirection: 'row',
-  }
+  },
+  category_name: {
+    color: 'red'
+  },
+  frequency: {
+    color: 'green'
+  },
+  payment_method: {
+    color: 'aqua'
+  }, payment_method_name: {
+    color: 'yellow'
+  },
+  type: {
+    color: 'pink'
+  },
+  category_name: {
+    color: 'blue'
+  },
+  type_name: {
+    color: 'purple'
+  },
+  description: {
+    color: 'orange',
+    maxWidth: '90%'
+  },
+
+
 
 });
 
+
 export default TransactionList;
+
