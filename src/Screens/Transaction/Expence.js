@@ -3,6 +3,7 @@ import { View, Text, TextInput, Button, Modal, StyleSheet, Image } from 'react-n
 import { useSelector } from "react-redux";
 import actions from "../../redux/actions/index";
 import Icon from 'react-native-vector-icons/FontAwesome';
+import { ScrollView } from 'react-native-gesture-handler';
 const Expence = () => {
     useEffect(() => {
         onTransactionList()
@@ -41,37 +42,37 @@ const Expence = () => {
         }
     }
     return (
-        filteredData.map((item) => (
-            <View style={styles.item}>
-                <Image
-                    style={[styles.img]}
-                    source={{ uri: item.image }}
-                />
-                <View style={[styles.right, styles.rw]}>
-                    <View style={styles.clm}>
-                        <Text style={styles.id}>{item.id}</Text>
-                        <Text style={styles.type_name}>{item.type_name}</Text>
-                        <Text style={[styles.description]}>{item.description}</Text>
-                    </View>
-                    <View style={styles.clm}>
-                        <Text style={[styles.amount]} >RS:{item.amount}</Text>
-                        <View style={[styles.rw]}>
-                            <Icon name='bank' size={30} style={[styles.icon]} />
-                            <Text style={[styles.amount]} >...</Text>
+        <ScrollView>
+            {filteredData.map((item) => (
+                <View style={styles.item}>
+                    <Image
+                        style={[styles.img]}
+                        source={{ uri: item.image }}
+                    />
+                    <View style={[styles.right, styles.rw]}>
+                        <View style={styles.clm}>
+                            <Text style={styles.id}>{item.id}</Text>
+                            <Text style={styles.type_name}>{item.type_name}</Text>
+                            <Text style={[styles.description]}>{item.description}</Text>
                         </View>
-                        <Text style={[styles.icon]} >{item.category_name}</Text>
+                        <View style={styles.clm}>
+                            <Text style={[styles.amount]} >RS:{item.amount}</Text>
+                            <View style={[styles.rw]}>
+                                <Icon name='bank' size={30} style={[styles.icon]} />
+                                <Text style={[styles.amount]} >...</Text>
+                            </View>
+                            <Text style={[styles.icon]} >{item.category_name}</Text>
 
+                        </View>
                     </View>
                 </View>
-            </View>
-
-        )))
+            ))}
+        </ScrollView>
+    )
 }
 const styles = StyleSheet.create({
     container: {
         padding: 10,
-        // backgroundColor: 'red'
-
     },
     searchInput: {
         borderWidth: 1,
@@ -203,9 +204,5 @@ const styles = StyleSheet.create({
         color: 'orange',
         maxWidth: '90%'
     },
-
-
-
 });
-
 export default Expence;
