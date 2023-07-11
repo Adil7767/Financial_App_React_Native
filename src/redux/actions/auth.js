@@ -56,8 +56,8 @@ export function resetpassword(data) {
 export function changepassword(data, headers) {
     return apiPost(CHANGE_PASSWORD, data, headers)
 }
-export function profile(headers) {
-    return apiGet(PROFILE, headers);
+export async function profile(data, headers) {
+    return await apiGet(PROFILE, data, headers,)
 }
 export function logout() {
     dispatch({ type: types.CLEAR_REDUX_STATE })
